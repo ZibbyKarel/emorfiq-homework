@@ -1,3 +1,9 @@
+@if $product-card__stock-hidden {
+    .ProductCard-stock {
+        display: none;
+    }
+}
+
 .ProductCard-stock {
     @include change-value(margin, $product-card__mobile-stock-margin, none);
     @include change-value(padding, $product-card__mobile-stock-padding, none);

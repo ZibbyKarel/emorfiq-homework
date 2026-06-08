@@ -3,6 +3,9 @@
     width: 100%;
     display: grid;
     grid-template: 'image' 100% / 100%;
+    @include change-value(position, $product-card__image-wrapper-position, static);
+    @include change-value(inset, $product-card__image-wrapper-inset, none);
+    @include change-value(z-index, $product-card__image-wrapper-z-index, none);
 
     > img {
         grid-area: image;

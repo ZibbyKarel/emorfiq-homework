@@ -19,3 +19,29 @@
         }
     }
 }
+
+// Per-group badge colors. Higher specificity (0,2,0) than the base
+// `.Badge--rectangle` (0,1,0) so these win inside the same cascade layer.
+.ProductCard-primaryBadges .Badge {
+    @include change-value(background-color, $product-card__primary-badge-background-color, none);
+    @include change-value(color, $product-card__primary-badge-color, none);
+}
+
+.ProductCard-secondaryBadges .Badge {
+    @include change-value(background-color, $product-card__secondary-badge-background-color, none);
+    @include change-value(color, $product-card__secondary-badge-color, none);
+}
+
+.ProductCard-tertiaryBadges .Badge {
+    @include change-value(background-color, $product-card__tertiary-badge-background-color, none);
+    @include change-value(color, $product-card__tertiary-badge-color, none);
+}
+
+// Rectangle badge shape within a product card.
+.ProductCard .Badge--rectangle {
+    display: flex;
+    align-items: center;
+    @include change-value(border-radius, $product-card__badge-rectangle-border-radius, none);
+    @include change-value(height, $product-card__badge-rectangle-height, none);
+    @include change-value(text-transform, $product-card__badge-rectangle-text-transform, none);
+}

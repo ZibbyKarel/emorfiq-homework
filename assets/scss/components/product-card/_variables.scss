@@ -25,6 +25,12 @@ $product-card__mobile-header-margin: none !default;
 $product-card__mobile-header-padding: none !default;
 $product-card__mobile-header-height: 138px !default;
 
+// Header alignment / stacking (width-invariant)
+$product-card__mobile-header-align-items: center !default;
+$product-card__mobile-header-justify-content: center !default;
+$product-card__mobile-header-z-index: none !default;
+$product-card__mobile-header-gap: none !default;
+
 $product-card__desktop-header-margin: $product-card__mobile-header-margin !default;
 $product-card__desktop-header-padding: $product-card__mobile-header-padding !default;
 $product-card__desktop-header-height: 280px !default;
@@ -152,6 +158,28 @@ $product-card__badges_positions: (
     ),
 ) !default;
 
+// Image wrapper
+$product-card__image-wrapper-position: static !default;
+$product-card__image-wrapper-inset: none !default;
+$product-card__image-wrapper-z-index: none !default;
+
+// Badge groups — background/text color per group (sentinel `none` = inherit base Badge)
+$product-card__primary-badge-background-color: none !default;
+$product-card__primary-badge-color: none !default;
+$product-card__secondary-badge-background-color: none !default;
+$product-card__secondary-badge-color: none !default;
+$product-card__tertiary-badge-background-color: none !default;
+$product-card__tertiary-badge-color: none !default;
+
+// Rectangle badge shape (within a product card)
+$product-card__badge-rectangle-border-radius: none !default;
+$product-card__badge-rectangle-height: none !default;
+$product-card__badge-rectangle-text-transform: none !default;
+
+// Variants picker
+$product-card__variants-hover-swap: true !default;
+$product-card__variant-accent-color: $ui-color-secondary-600 !default;
+
 // Like
 $product-card__mobile-like-inset: auto 20px 20px auto !default;
 $product-card__desktop-like-inset: auto 20px 20px auto !default;
@@ -224,6 +252,7 @@ $product-card__desktop-price-old-font-weight: $product-card__mobile-price-old-fo
 $product-card__desktop-price-old-color: $product-card__mobile-price-old-color !default;
 
 // Stock
+$product-card__stock-hidden: false !default;
 $product-card__mobile-stock-margin: $spacer-1 0 0 !default;
 $product-card__mobile-stock-padding: none !default;
 $product-card__mobile-stock-font-family: none !default;
@@ -241,6 +270,7 @@ $product-card__desktop-stock-font-weight: $product-card__mobile-stock-font-weigh
 $product-card__desktop-stock-color: $product-card__mobile-stock-color !default;
 
 // Title
+$product-card__title-truncate: false !default;
 $product-card__mobile-title-margin: none !default;
 $product-card__mobile-title-padding: none !default;
 $product-card__mobile-title-font-family: none !default;

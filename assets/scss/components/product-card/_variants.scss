@@ -1,0 +1,75 @@
+// Variant picker. Hidden by default; when hover-swap is on it takes over the
+// badge spot on hover/focus so the two never occupy the space at once.
+.ProductCard-variants {
+    display: none;
+}
+
+@if $product-card__variants-hover-swap {
+    .ProductCard:hover,
+    .ProductCard:focus-within {
+        .ProductCard-primaryBadges,
+        .ProductCard-secondaryBadges,
+        .ProductCard-tertiaryBadges {
+            display: none;
+        }
+
+        .ProductCard-variants {
+            display: block;
+        }
+    }
+}
+
+.ProductCard-variantsLabel {
+    display: none;
+    margin: $spacer-1 0 $spacer-1;
+    font-size: var(--fs-400);
+    font-weight: $ui-fw-bold;
+}
+
+.ProductCard-variantsList {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 8px;
+    background-color: $ui-color-white;
+    height: 100%;
+    padding: 8px;
+}
+
+// Visually hide the native radio while keeping it accessible/focusable.
+.ProductCard-variantInput {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.ProductCard-variant {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    padding: 0 $spacer-0;
+    border: $ui-global-border-width solid $ui-global-border-color-light;
+    border-radius: 6px;
+    font-size: var(--fs-400);
+    line-height: 1;
+    cursor: pointer;
+    user-select: none;
+}
+
+.ProductCard-variantInput:checked + .ProductCard-variant {
+    border: 2px solid $product-card__variant-accent-color;
+    border-radius: 0;
+    color: $product-card__variant-accent-color;
+}
+
+.ProductCard-variantInput:focus-visible + .ProductCard-variant {
+    outline: 2px solid $product-card__variant-accent-color;
+    outline-offset: 2px;
+}

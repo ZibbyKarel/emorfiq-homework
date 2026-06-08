@@ -289,131 +289,42 @@ $product-card__desktop-image-height: $product-card__mobile-image-height;
 //$productCard-priceHistory__desktop-textAlign: $productCard-priceHistory__mobile-textAlign;
 //$productCard-priceHistory__desktop-color: $productCard-priceHistory__mobile-color;
 
-// Badge overrides
-.ProductCard {
-  // Variants and badges share the same spot at the bottom of the header.
-  // Variants are hidden until the card is hovered; on hover the badges give
-  // way to the variant picker so the two never occupy the space at once.
-  &:hover,
-  &:focus-within {
-    .ProductCard-tertiaryBadges,
-    .ProductCard-secondaryBadges,
-    .ProductCard-primaryBadges {
-      display: none;
-    }
+// ---------------------------------------------------------------------------
+// The visuals below used to live here as raw CSS. They are now driven by
+// variables declared in components/product-card/_variables.scss — set the
+// value here, the component emits the rule. Structural CSS (variant-picker
+// layout, hover-swap mechanism) moved into the component partials themselves.
+// ---------------------------------------------------------------------------
 
-    .ProductCard-variants {
-      display: block;
-    }
-  }
+// Header — badges sit bottom-left, header above the image
+$product-card__mobile-header-align-items: flex-end;
+$product-card__mobile-header-justify-content: flex-start;
+$product-card__mobile-header-z-index: 0;
+$product-card__mobile-header-gap: 4px;
 
-  .ProductCard-variants {
-    display: none;
-  }
+// Image wrapper — fills the header, behind badges/variants
+$product-card__image-wrapper-position: absolute;
+$product-card__image-wrapper-inset: 0;
+$product-card__image-wrapper-z-index: -1;
 
-  .ProductCard-imageWrapper {
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-  }
+// Stock hidden in this theme
+$product-card__stock-hidden: true;
 
-  .ProductCard-header {
-    z-index: 0;
-    align-items: flex-end;
-    justify-content: flex-start;
-    gap: 4px;
-  }
+// Title truncated to a single line
+$product-card__title-truncate: true;
 
-  .Badge--rectangle {
-    border-radius: 3px;
-    height: 26px;
-    display: flex;
-    align-items: center;
-    text-transform: uppercase;
-  }
+// Badge group colors
+$product-card__primary-badge-background-color: $ui-color-secondary-600;
+$product-card__secondary-badge-background-color: $ui-color-gray-700;
+$product-card__secondary-badge-color: $ui-color-white;
+$product-card__tertiary-badge-background-color: $ui-color-primary-600;
 
-  .ProductCard-primaryBadges {
-    .Badge {
-      background-color: $ui-color-secondary-600;
-    }
-  }
+// Rectangle badge shape
+$product-card__badge-rectangle-border-radius: 3px;
+$product-card__badge-rectangle-height: 26px;
+$product-card__badge-rectangle-text-transform: uppercase;
 
-  .ProductCard-secondaryBadges {
-    .Badge {
-      background-color: $ui-color-gray-700;
-      color: $ui-color-white;
-    }
-  }
-
-  .ProductCard-tertiaryBadges {
-    .Badge {
-      background-color: $ui-color-primary-600;
-    }
-  }
-
-  .ProductCard-stock {
-    display: none;
-  }
-
-  .ProductCard-title {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-
-  // Variant picker
-  .ProductCard-variantsLabel {
-    display: none;
-    margin: $spacer-1 0 $spacer-1;
-    font-size: var(--fs-400);
-    font-weight: $ui-fw-bold;
-  }
-
-  .ProductCard-variantsList {
-    display: flex;
-    flex-flow: row wrap;
-    gap: 8px;
-    background-color: $ui-color-white;
-    height: 100%;
-    padding: 8px;
-  }
-
-  // Visually hide the native radio while keeping it accessible/focusable.
-  .ProductCard-variantInput {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    border: 0;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    white-space: nowrap;
-  }
-
-  .ProductCard-variant {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 24px;
-    padding: 0 $spacer-0;
-    border: $ui-global-border-width solid $ui-global-border-color-light;
-    border-radius: 6px;
-    font-size: var(--fs-400);
-    line-height: 1;
-    cursor: pointer;
-    user-select: none;
-  }
-
-  .ProductCard-variantInput:checked + .ProductCard-variant {
-    border: 2px solid $ui-color-secondary-600;
-    border-radius: 0;
-    color: $ui-color-secondary-600;
-  }
-
-  .ProductCard-variantInput:focus-visible + .ProductCard-variant {
-    outline: 2px solid $ui-color-secondary-600;
-    outline-offset: 2px;
-  }
-}
+// Variant picker — accent + hover-swap default to the component's values
+// (crimson accent via $ui-color-secondary-600, swap on), so no override needed:
+//$product-card__variant-accent-color: $ui-color-secondary-600;
+//$product-card__variants-hover-swap: true;

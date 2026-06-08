@@ -1,3 +1,11 @@
+@if $product-card__title-truncate {
+    .ProductCard-title {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+
 .ProductCard-title {
     @include change-value(margin, $product-card__mobile-title-margin, none);
     @include change-value(padding, $product-card__mobile-title-padding, none);

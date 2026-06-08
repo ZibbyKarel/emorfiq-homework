@@ -3,8 +3,10 @@
     flex-shrink: 0;
     position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: $product-card__mobile-header-align-items;
+    justify-content: $product-card__mobile-header-justify-content;
+    @include change-value(gap, $product-card__mobile-header-gap, none);
+    @include change-value(z-index, $product-card__mobile-header-z-index, none);
     @include change-value(margin, $product-card__mobile-header-margin, none);
     @include change-value(padding, $product-card__mobile-header-padding, none);
     @include change-value(height, $product-card__mobile-header-height, none);
