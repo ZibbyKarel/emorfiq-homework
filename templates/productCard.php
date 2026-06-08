@@ -1,5 +1,5 @@
 <div class="ProductCard">
-    <!-- <a href="#product" class="ProductCard-link"></a> -->
+    <a href="#product" class="ProductCard-link"></a>
     <div class="ProductCard-header">
         <div class="ProductCard-imageWrapper">
             <img src="public/images/product-<?php echo rand(0, 1); ?>.png" width="652" height="560" alt=""

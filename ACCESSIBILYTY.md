@@ -1,17 +1,17 @@
-## Vážné
+## Critical
 
-1. `alt=""` na produktovém obrázku (řádek 5) — prázdný alt = dekorativní; pro screen reader hlavní obrázek zmizí. Alt = název produktu.
-2. `<h2>` bez `<h1>` (řádek 30) — rozbitá hierarchie nadpisů.
-3. "Do košíku" je `<a href="#basket">` (řádek 52) — akce, ne navigace; má být `<button>`. Pokud zůstane odkaz: `aria-label="Do košíku: <název produktu>"`.
+1. `alt=""` on the product image (line 5) — an empty alt means decorative; the main image disappears for screen readers. Set alt = product name.
+2. `<h2>` without an `<h1>` (line 30) — broken heading hierarchy.
+3. "Add to cart" is an `<a href="#basket">` (line 52) — this is an action, not navigation; it should be a `<button>`. If it stays a link: `aria-label="Add to cart: <product name>"`.
 
-## Středně vážné
+## Moderate
 
-4. Cena (řádek 49) — holý `<div>`, není sémanticky svázaná s produktem.
-5. Badges (řádky 10, 15, 22) — holé `<div>`, screen reader nemá kontext; `-10%` nezná referenční produkt.
-6. Stav skladu (řádky 40, 42) — rozlišen barvou (`u-textColorGreen` / `u-textColorOrange`); text to zachraňuje, ale barva nesmí být jediný nositel informace (WCAG 1.4.1).
+4. Price (line 49) — a bare `<div>`, not semantically tied to the product.
+5. Badges (lines 10, 15, 22) — bare `<div>`s; screen readers get no context, and `-10%` has no reference product.
+6. Stock status (lines 40, 42) — distinguished by color (`u-textColorGreen` / `u-textColorOrange`); the text saves it, but color must not be the only carrier of information (WCAG 1.4.1).
 
-## Drobnosti
+## Minor
 
-7. Zakomentovaný overlay odkaz (řádek 2) — při odkomentování prázdný odkaz bez textu = accessibility chyba.
-8. Karta nemá `<article>` — zvážit pro lepší orientaci screen readeru. 
-9. Unitř karty může být `<header>` i `<footer>` a pro body bude nejlepší `<section>`
+7. Link (line 2) — an empty link with no text is an accessibility error.
+8. The card has no `<article>` — consider it for better screen-reader orientation.
+9. Inside the card, a `<header>` and `<footer>` would help, and a `<section>` would be best for the body.
