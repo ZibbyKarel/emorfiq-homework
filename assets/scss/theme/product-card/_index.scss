@@ -1,19 +1,19 @@
 // Common
 //$product-card-breakpoint: $ui-global-breakpoint;
 //$product-card-background-color: $ui-global-background;
-//$product-card-hover-image-scale: 1.25;
-//$product-card-hover-title-decoration: underline;
+// $product-card-hover-image-scale: 1.25;
+$product-card-hover-title-decoration: none;
 
 //$product-card__mobile-margin: none;
 //$product-card__mobile-padding: 0 0 $spacer-1;
-//$product-card__mobile-border-width: 0 0 1px;
+$product-card__mobile-border-width: 0;
 //$product-card__mobile-border-color: $ui-global-border-color-light;
 //$product-card__mobile-border-radius: null;
 //$product-card__mobile-border-hover-color: $ui-color-primary-100;
 
 //$product-card__desktop-margin: $product-card__mobile-margin;
 //$product-card__desktop-padding: 0 0 $spacer-2;
-//$product-card__desktop-border-width: $product-card__mobile-border-width;
+$product-card__desktop-border-width: $product-card__mobile-border-width;
 //$product-card__desktop-border-color: $product-card__mobile-border-color;
 //$product-card__desktop-border-radius: $product-card__mobile-border-radius;
 //$product-card__desktop-border-hover-color: $product-card__mobile-border-hover-color;
@@ -21,32 +21,32 @@
 // Header
 //$product-card-header-background-color: none;
 
-//$product-card__mobile-header-margin: none;
-//$product-card__mobile-header-padding: none;
+$product-card__mobile-header-margin: none;
+$product-card__mobile-header-padding: 0;
 //$product-card__mobile-header-height: 138px;
 
-//$product-card__desktop-header-margin: $product-card__mobile-header-margin;
-//$product-card__desktop-header-padding: $product-card__mobile-header-padding;
-//$product-card__desktop-header-height: 280px;
+$product-card__desktop-header-margin: $product-card__mobile-header-margin;
+$product-card__desktop-header-padding: $product-card__mobile-header-padding;
+$product-card__desktop-header-height: 460px;
 
 // Body
 //$product-card-body-background-color: none;
 
-//$product-card__mobile-body-margin: none;
-//$product-card__mobile-body-padding: $spacer-1 0 $spacer-0;
+$product-card__mobile-body-margin: none;
+$product-card__mobile-body-padding: $spacer-1 0;
 
-//$product-card__desktop-body-margin: $product-card__mobile-body-margin;
-//$product-card__desktop-body-padding: $spacer-1 0;
+$product-card__desktop-body-margin: $product-card__mobile-body-margin;
+$product-card__desktop-body-padding: $spacer-1 0;
 
 // Footer
 //$product-card-footer-background-color: none;
 
 //$product-card__mobile-footer-margin: none;
-//$product-card__mobile-footer-padding: 12px 0 0;
+$product-card__mobile-footer-padding: 0;
 //$product-card__mobile-footer-height: none;
 
 //$product-card__desktop-footer-margin: $product-card__mobile-footer-margin;
-//$product-card__desktop-footer-padding: $product-card__mobile-footer-padding;
+$product-card__desktop-footer-padding: $product-card__mobile-footer-padding;
 //$product-card__desktop-footer-height: $product-card__mobile-footer-height;
 
 // Footer content
@@ -63,7 +63,7 @@
 //$product-card__desktop-footer-content__desktop-place-items: $product-card__desktop-footer-content__mobile-place-items;
 
 // priceWrapper
-//$product-card__mobile-price-wrapper-margin: none;
+$product-card__mobile-price-wrapper-margin: none;
 //$product-card__mobile-price-wrapper-padding: 0 0 8px;
 //$product-card__mobile-price-wrapper-height: 48px;
 //$product-card__mobile-price-wrapper-align-self: center;
@@ -120,37 +120,33 @@
 
 //$product-card__desktop-footer-quantity-min-height: $product-card__mobile-footer-quantity-min-height;
 
-// Badges
-//$product-card__badges_positions: (
-  // name
-  //      primary: (
-  //              0: (// breakpoint
-  //                      position: absolute,
-  //                      inset: 0 auto auto 0,
-  //                      display: flex,
-  //                      flex-flow: row wrap,
-  //                      gap: 8px,
-  //              ),
-  //      ),
-  //      secondary: (
-  //              0: (
-  //                      margin: 0 0 10px 0,
-  //                      display: flex,
-  //                      flex-flow: row wrap,
-  //                      gap: 4px,
-  //              )
-  //      ),
-  //      tertiary: (
-  //              0: (
-  //                      position: absolute,
-  //                      inset: auto auto 16px 0,
-  //                      display: flex,
-  //                      flex-flow: column,
-  //                      align-items: flex-start,
-  //                      gap: 4px,
-  //              )
-  //      ),
-//);
+// Badges — normal flow in header flex row, all badges in one row at the bottom
+$product-card__badges_positions: (
+  primary: (
+    0: (
+      display: flex,
+      direction: row,
+      align-items: flex-start,
+      gap: 4px,
+    ),
+  ),
+  secondary: (
+    0: (
+      display: flex,
+      flex-flow: row,
+      align-items: flex-start,
+      gap: 4px,
+    ),
+  ),
+  tertiary: (
+    0: (
+      display: flex,
+      flex-flow: row,
+      align-items: flex-start,
+      gap: 4px,
+    ),
+  ),
+);
 
 // Like
 //$product-card__mobile-like-inset: auto 20px 20px auto;
@@ -171,23 +167,23 @@
 //$product-card__desktop-btn-padding: $product-card__mobile-btn-padding;
 
 // Image
-//$product-card__mobile-image-margin: none;
-//$product-card__mobile-image-padding: none;
-//$product-card__mobile-image-display: block;
-//$product-card__mobile-image-width: 100%;
-//$product-card__mobile-image-height: auto;
-//$product-card__mobile-image-max-width: nones;
-//$product-card__mobile-image-max-height: 100%;
-//$product-card__mobile-image-object-fit: contain;
+// $product-card__mobile-image-margin: none;
+// $product-card__mobile-image-padding: none;
+// $product-card__mobile-image-display: block;
+$product-card__mobile-image-width: 100%;
+$product-card__mobile-image-height: 100%;
+// $product-card__mobile-image-max-width: nones;
+// $product-card__mobile-image-max-height: 100%;
+// $product-card__mobile-image-object-fit: contain;
 
-//$product-card__desktop-image-margin: $product-card__mobile-image-margin;
-//$product-card__desktop-image-padding: $product-card__mobile-image-padding;
-//$product-card__desktop-image-display: $product-card__mobile-image-display;
-//$product-card__desktop-image-width: $product-card__mobile-image-width;
-//$product-card__desktop-image-height: $product-card__mobile-image-height;
-//$product-card__desktop-image-max-width: $product-card__mobile-image-max-width;
-//$product-card__desktop-image-max-height: $product-card__mobile-image-max-height;
-//$product-card__desktop-image-object-fit: $product-card__mobile-image-object-fit;
+// $product-card__desktop-image-margin: $product-card__mobile-image-margin;
+// $product-card__desktop-image-padding: $product-card__mobile-image-padding;
+// $product-card__desktop-image-display: $product-card__mobile-image-display;
+$product-card__desktop-image-width: $product-card__mobile-image-width;
+$product-card__desktop-image-height: $product-card__mobile-image-height;
+// $product-card__desktop-image-max-width: $product-card__mobile-image-max-width;
+// $product-card__desktop-image-max-height: $product-card__mobile-image-max-height;
+// $product-card__desktop-image-object-fit: $product-card__mobile-image-object-fit;
 
 // Price
 //$product-card__mobile-price-margin: none;
@@ -292,3 +288,132 @@
 //$productCard-priceHistory__desktop-fontWeight: $productCard-priceHistory__mobile-fontWeight;
 //$productCard-priceHistory__desktop-textAlign: $productCard-priceHistory__mobile-textAlign;
 //$productCard-priceHistory__desktop-color: $productCard-priceHistory__mobile-color;
+
+// Badge overrides
+.ProductCard {
+  // Variants and badges share the same spot at the bottom of the header.
+  // Variants are hidden until the card is hovered; on hover the badges give
+  // way to the variant picker so the two never occupy the space at once.
+  &:hover,
+  &:focus-within {
+    .ProductCard-tertiaryBadges,
+    .ProductCard-secondaryBadges,
+    .ProductCard-primaryBadges {
+      display: none;
+    }
+
+    .ProductCard-variants {
+      display: block;
+    }
+  }
+
+  .ProductCard-variants {
+    display: none;
+  }
+
+  .ProductCard-imageWrapper {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  }
+
+  .ProductCard-header {
+    z-index: 0;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 4px;
+  }
+
+  .Badge--rectangle {
+    border-radius: 3px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+  }
+
+  .ProductCard-primaryBadges {
+    .Badge {
+      background-color: $ui-color-secondary-600;
+    }
+  }
+
+  .ProductCard-secondaryBadges {
+    .Badge {
+      background-color: $ui-color-gray-700;
+      color: $ui-color-white;
+    }
+  }
+
+  .ProductCard-tertiaryBadges {
+    .Badge {
+      background-color: $ui-color-primary-600;
+    }
+  }
+
+  .ProductCard-stock {
+    display: none;
+  }
+
+  .ProductCard-title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  // Variant picker
+  .ProductCard-variantsLabel {
+    display: none;
+    margin: $spacer-1 0 $spacer-1;
+    font-size: var(--fs-400);
+    font-weight: $ui-fw-bold;
+  }
+
+  .ProductCard-variantsList {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 8px;
+    background-color: $ui-color-white;
+    height: 100%;
+    padding: 8px;
+  }
+
+  // Visually hide the native radio while keeping it accessible/focusable.
+  .ProductCard-variantInput {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .ProductCard-variant {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    padding: 0 $spacer-0;
+    border: $ui-global-border-width solid $ui-global-border-color-light;
+    border-radius: 6px;
+    font-size: var(--fs-400);
+    line-height: 1;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .ProductCard-variantInput:checked + .ProductCard-variant {
+    border: 2px solid $ui-color-secondary-600;
+    border-radius: 0;
+    color: $ui-color-secondary-600;
+  }
+
+  .ProductCard-variantInput:focus-visible + .ProductCard-variant {
+    outline: 2px solid $ui-color-secondary-600;
+    outline-offset: 2px;
+  }
+}

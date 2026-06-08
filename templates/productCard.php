@@ -1,31 +1,46 @@
 <div class="ProductCard">
-    <a href="#product" class="ProductCard-link"></a>
+    <!-- <a href="#product" class="ProductCard-link"></a> -->
     <div class="ProductCard-header">
         <div class="ProductCard-imageWrapper">
-            <img src="public/images/product-<?php echo rand(0,1); ?>.png" width="652" height="560" alt="" class="ProductCard-image ProductCard-image--primary" loading="lazy">
+            <img src="public/images/product-<?php echo rand(0, 1); ?>.png" width="652" height="560" alt=""
+                 class="ProductCard-image ProductCard-image--primary" loading="lazy">
         </div>
-        <?php if (rand(0,1)) { ?>
-            <div class="ProductCard-primaryBadges">
-                <div class="Badge Badge--circle">
-                    -10%
-                </div>
-            </div>
-        <?php } ?>
-        <?php if (rand(0,1)) { ?>
+        <?php if (rand(0, 1)) { ?>
             <div class="ProductCard-tertiaryBadges">
-                <div class="Badge Badge--rectangleSide">Pro grafiky</div>
+                <div class="Badge Badge--rectangle">Pro grafiky</div>
             </div>
         <?php } ?>
-    </div>
-    <div class="ProductCard-body">
-        <div>
-            <?php if (rand(0,1)) { ?>
+        <?php if (rand(0,1)) { ?>
             <div class="ProductCard-secondaryBadges">
                 <div class="Badge Badge--rectangle" style="--color: #5ce62e">
                     štítek test
                 </div>
             </div>
-            <?php } ?>
+        <?php } ?>
+        <?php if (rand(0,1)) { ?>
+            <div class="ProductCard-primaryBadges">
+                <div class="Badge Badge--rectangle">
+                    -10%
+                </div>
+            </div>
+        <?php } ?>
+        <div class="ProductCard-variants">
+            <?php
+            $variantSizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL', 'XXXXL'];
+            $variantGroup = 'variant-' . uniqid();
+            ?>
+            <p class="ProductCard-variantsLabel">Zvolte variantu:</p>
+            <div class="ProductCard-variantsList">
+                <?php foreach ($variantSizes as $variantIndex => $size) :
+                    $variantId = $variantGroup . '-' . $variantIndex; ?>
+                    <input type="radio" class="ProductCard-variantInput" name="<?= $variantGroup ?>" id="<?= $variantId ?>" value="<?= $size ?>">
+                    <label class="ProductCard-variant" for="<?= $variantId ?>"><?= $size ?></label>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+    <div class="ProductCard-body">
+        <div>
             <h2 class="ProductCard-title">
                 <?php if (rand(0,1)) { ?>
                     MacBook Pro 15" 2,5 GHz s Retina displejem, 512 GB (2015)

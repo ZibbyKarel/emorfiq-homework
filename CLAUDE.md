@@ -46,4 +46,3 @@ This is a **token-driven, themeable component library**. The core conventions:
 ## Notes
 
 - `desktop.ini` files are Windows artifacts — ignore them.
-- Not a git repo. There is no remote, CI, or deploy step.

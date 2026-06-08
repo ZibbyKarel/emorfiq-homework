@@ -1,0 +1,5 @@
+// Brand color overrides — these values win over !default in variables/color.scss
+// because theme/ is imported after variables/ but before components/.
+$ui-color-secondary-600: #d91242; // brand crimson (promo/sale badges)
+$ui-color-gray-700:      #132736; // brand dark navy (category badges)
+$ui-color-primary-600:   #00519e; // brand blue (feature/info badges)
